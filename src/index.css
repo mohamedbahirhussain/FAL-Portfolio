@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    @apply text-slate-800;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl sm:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl sm:text-3xl;
+  }
+  
+  h4 {
+    @apply text-xl sm:text-2xl;
+  }
+  
+  section {
+    @apply py-16 md:py-24;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent 
+    rounded-md font-medium text-base focus:outline-none focus:ring-2 
+    focus:ring-offset-2 transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply btn bg-teal-500 hover:bg-teal-600 text-white focus:ring-teal-500;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-blue-500 hover:bg-blue-600 text-white focus:ring-blue-500;
+  }
+  
+  .btn-outline {
+    @apply btn border-teal-500 text-teal-500 hover:bg-teal-50 focus:ring-teal-500;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-200;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800;
+  }
+
+  .highlight {
+    @apply relative;
+  }
+  
+  .highlight::after {
+    @apply content-[''] absolute -z-10 bottom-1 left-0 w-full h-3 bg-teal-200/60 transform -rotate-1;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-teal-100 text-teal-800;
+  }
+
+  .badge-secondary {
+    @apply badge bg-blue-100 text-blue-800;
+  }
+
+  .badge-purple {
+    @apply badge bg-purple-100 text-purple-800;
+  }
+}
+
+.progress-bar {
+  @apply relative h-2 rounded-full overflow-hidden bg-slate-200;
+}
+
+.progress-bar-fill {
+  @apply absolute top-0 left-0 h-full rounded-full;
+}
+
+/* DNA Animation */
+.dna-container {
+  @apply absolute -z-10 w-full h-full opacity-10 overflow-hidden;
+}
+
+.dna-helix {
+  @apply absolute w-40 h-[600px] animate-[spin_20s_linear_infinite];
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.fade-in-up-delay-1 {
+  animation: fadeInUp 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.fade-in-up-delay-2 {
+  animation: fadeInUp 0.6s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.timeline-item {
+  @apply relative pl-8 pb-8 border-l border-slate-200;
+}
+
+.timeline-item::before {
+  @apply content-[''] absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-teal-500 border-2 border-white;
+}
+
+.timeline-item:last-child {
+  @apply border-transparent pb-0;
+}
