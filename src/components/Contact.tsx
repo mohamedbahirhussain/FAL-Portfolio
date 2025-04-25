@@ -50,15 +50,6 @@ const Contact: React.FC = () => {
             </p>
             
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="bg-teal-100 p-3 rounded-lg">
-                  <Phone className="h-6 w-6 text-teal-600" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-lg">Phone</h4>
-                  <p className="text-slate-600">+94 77 1780183</p>
-                </div>
-              </div>
               
               <div className="flex items-start gap-4">
                 <div className="bg-blue-100 p-3 rounded-lg">
